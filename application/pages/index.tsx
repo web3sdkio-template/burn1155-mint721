@@ -1,5 +1,5 @@
-import { useAddress, useContract, Web3Button } from "@thirdweb-dev/react";
-import { SmartContract } from "@thirdweb-dev/sdk/dist/declarations/src/contracts/smart-contract";
+import { useAddress, useContract, Web3Button } from "@web3sdkio/react";
+import { SmartContract } from "@web3sdkio/sdk/dist/declarations/src/contracts/smart-contract";
 import { BaseContract } from "ethers";
 import type { NextPage } from "next";
 import { MAYC_ADDRESS, SERUM_ADDRESS } from "../const/contractAddresses";

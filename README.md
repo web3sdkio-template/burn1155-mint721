@@ -9,14 +9,14 @@ Similar to the [Mutant Ape Yacht Club](https://opensea.io/collection/mutant-ape-
 ## Using This Template
 
 ```
-npx thirdweb create --template burn1155-mint721
+npx web3sdkio create --template burn1155-mint721
 ```
 
 ## Released Contracts
 
-- BAYClone: https://thirdweb.com/0xb371d1C5629C70ACd726B20a045D197c256E1054/BAYClone
-- SerumClone: https://thirdweb.com/0xb371d1C5629C70ACd726B20a045D197c256E1054/SerumClone
-- MAYClone: https://thirdweb.com/0xb371d1C5629C70ACd726B20a045D197c256E1054/MAYClone
+- BAYClone: https://web3sdk.io/0xb371d1C5629C70ACd726B20a045D197c256E1054/BAYClone
+- SerumClone: https://web3sdk.io/0xb371d1C5629C70ACd726B20a045D197c256E1054/SerumClone
+- MAYClone: https://web3sdk.io/0xb371d1C5629C70ACd726B20a045D197c256E1054/MAYClone
 
 ## Risks
 
@@ -101,4 +101,4 @@ We achieve this in the application side when the user tries to claim a MAYC from
 
 ## Join our Discord!
 
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
+For any questions, suggestions, join our discord at [https://discord.gg/web3sdkio](https://discord.gg/web3sdkio).
