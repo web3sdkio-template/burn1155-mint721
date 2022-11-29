@@ -2,8 +2,8 @@ In this guide, we'll show you how to create a clone of the MAYC collection drop 
 
 Before we get started, below are some helpful resources where you can learn more about the tools we will use in this guide.
 
-- [View project source code](https://github.com/web3sdkio-example/burn1155-mint721)
-- [Deploy](https://portal.web3sdk.io/deploy)
+- [View project source code](https://github.com/thirdweb-example/burn1155-mint721)
+- [Deploy](https://portal.thirdweb.com/deploy)
 
 Let's get started!
 
@@ -22,10 +22,10 @@ mkdir mayc-clone
 cd mayc-clone
 ```
 
-Now, we will use the web3sdkio CLI to generate a new hardhat project! So, run this command:
+Now, we will use the thirdweb CLI to generate a new hardhat project! So, run this command:
 
 ```
-npx web3sdkio create --contract
+npx thirdweb create --contract
 ```
 
 When it asks what type of project, you must select an empty one!
@@ -34,19 +34,19 @@ Now you have a hardhat project ready to go!
 
 ### Setting up the frontend
 
-I am going to use the [Next.js Typescript starter template](https://github.com/web3sdkio-example/next-typescript-starter) for this guide.
+I am going to use the [Next.js Typescript starter template](https://github.com/thirdweb-example/next-typescript-starter) for this guide.
 
-If you are following along with the guide, you can create a project with the template using the [web3sdkio CLI](https://github.com/web3sdkio/web3/tree/main/packages/cli):
+If you are following along with the guide, you can create a project with the template using the [thirdweb CLI](https://github.com/thirdweb-dev/js/tree/main/packages/cli):
 
 ```
-npx web3sdkio create --next --ts
+npx thirdweb create --next --ts
 ```
 
 If you already have a Next.js app you can simply follow these steps to get started:
 
-- Install `@web3sdkio/react` and `@web3sdkio/sdk` and `ethers`.
+- Install `@thirdweb-dev/react` and `@thirdweb-dev/sdk` and `ethers`.
 
-- Add MetaMask authentication to the site. You can follow this [guide](https://portal.web3sdk.io/guides/add-connectwallet-to-your-website) to add metamask auth.
+- Add MetaMask authentication to the site. You can follow this [guide](https://portal.thirdweb.com/guides/add-connectwallet-to-your-website) to add metamask auth.
 
 ## Creating the Smart Contracts
 
@@ -54,13 +54,13 @@ If you already have a Next.js app you can simply follow these steps to get start
 
 #### BAYClone.sol
 
-We will now write our smart contracts! Create a new file `BAYClone.sol` in the `contracts` folder. We are going to use the web3sdkio contracts extend feature to create a new NFT drop. So, paste the following into it
+We will now write our smart contracts! Create a new file `BAYClone.sol` in the `contracts` folder. We are going to use the thirdweb contracts extend feature to create a new NFT drop. So, paste the following into it
 
 ```sol
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.0;
 
-import "@web3sdkio/contracts/base/ERC721Drop.sol";
+import "@thirdweb-dev/contracts/base/ERC721Drop.sol";
 
 contract BAYClone is ERC721Drop {
     constructor(
@@ -81,17 +81,17 @@ contract BAYClone is ERC721Drop {
 }
 ```
 
-Here, we are importing the `ERC721Drop` contract from the web3sdkio contracts package. This contract is a base contract that allows us to create a new NFT drop. We are also passing in the name, symbol, royalty recipient, royalty bps, and primary sale recipient to the constructor.
+Here, we are importing the `ERC721Drop` contract from the thirdweb contracts package. This contract is a base contract that allows us to create a new NFT drop. We are also passing in the name, symbol, royalty recipient, royalty bps, and primary sale recipient to the constructor.
 
 #### SerumClone.sol
 
-Next, we will create a new contract that will be the collection of the serum. This will be an ERC1155 contract. Create a new file `SerumClone.sol` in the `contracts` folder. We will also use the web3sdkio contracts extend feature to create a new ERC1155 collection. So, paste the following into it
+Next, we will create a new contract that will be the collection of the serum. This will be an ERC1155 contract. Create a new file `SerumClone.sol` in the `contracts` folder. We will also use the thirdweb contracts extend feature to create a new ERC1155 collection. So, paste the following into it
 
 ```sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@web3sdkio/contracts/base/ERC1155Base.sol";
+import "@thirdweb-dev/contracts/base/ERC1155Base.sol";
 
 contract SerumClone is ERC1155Base {
     constructor(
@@ -103,7 +103,7 @@ contract SerumClone is ERC1155Base {
 }
 ```
 
-Here, just like the BAYC Clone, we are extending a base contract from the web3sdkio contracts package. This time, we are extending the `ERC1155Base` contract. We are also passing in the name, symbol, royalty recipient, and royalty bps to the constructor.
+Here, just like the BAYC Clone, we are extending a base contract from the thirdweb contracts package. This time, we are extending the `ERC1155Base` contract. We are also passing in the name, symbol, royalty recipient, and royalty bps to the constructor.
 
 #### MAYClone.sol
 
@@ -113,9 +113,9 @@ Finally, we will write our MAYC Clone, the most important contract. Here we are 
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.0;
 
-import "@web3sdkio/contracts/base/ERC721LazyMint.sol";
-import "@web3sdkio/contracts/base/ERC1155Base.sol";
-import "@web3sdkio/contracts/base/ERC721Drop.sol";
+import "@thirdweb-dev/contracts/base/ERC721LazyMint.sol";
+import "@thirdweb-dev/contracts/base/ERC1155Base.sol";
+import "@thirdweb-dev/contracts/base/ERC721Drop.sol";
 
 contract MAYClone is ERC721LazyMint {
     // Store constant values for the 2 NFT Collections:
@@ -168,12 +168,12 @@ Here, we are extending the `ERC721LazyMint` contract. We are also taking in the 
 
 The verifyClaim function checks if the user owns enough BAYC and Serum NFTs. The transferTokensOnClaim function burns the Serum NFTs from the user and then calls the inherited transferTokensOnClaim function.
 
-Now that we have written our smart contracts, we will go ahead and deploy our contract using [deploy](https://portal.web3sdk.io/deploy).
+Now that we have written our smart contracts, we will go ahead and deploy our contract using [deploy](https://portal.thirdweb.com/deploy).
 
 ### Deploying the contracts
 
 ```
-npx web3sdkio deploy
+npx thirdweb deploy
 ```
 
 This command allows you to avoid the painful process of setting up your entire project like setting up RPC URLs, exporting private keys, and writing scripts. Now, you will get options to choose which contract to deploy. We need to deploy all three of them so we will deploy them one by one.
@@ -208,7 +208,7 @@ Now, go to the NFTs tab. Let's batch upload some NFTs for the users to mint. For
 
 Click on batch upload and upload the images and the CSV/JSON file.
 
-Once they are uploaded you will be able to see the NFTs! To learn more about batch upload check out [this guide](https://portal.web3sdk.io/guides/how-to-batch-upload).
+Once they are uploaded you will be able to see the NFTs! To learn more about batch upload check out [this guide](https://portal.thirdweb.com/guides/how-to-batch-upload).
 
 Now, we need to claim some NFTs to test out the process. Go to the explorer tab and click on the claim option. Now, fill out the data I am using the following values:
 
@@ -231,12 +231,12 @@ We need to add an erc 1155 token that will be airdropped to the owners of the BA
 To airdrop the serums we will create a script that will get all the owners of the BAYC NFTs and create a CSV file from it. Then we will use this CSV file to airdrop the serums. So, in our `application` folder, create a new file called `scripts/getAll.mjs` and add the following:
 
 ```js
-import { Web3sdkioSDK } from "@web3sdkio/sdk";
+import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 import fs from "fs";
 import path from "path";
 
 (async () => {
-  const sdk = new Web3sdkioSDK("goerli");
+  const sdk = new ThirdwebSDK("goerli");
   const contract = await sdk.getContract(
     "0x3714e40A15Deffb8E43A58b018bD81C2c6AC2445"
   );
@@ -355,4 +355,4 @@ Now, if we test out our app everything works! 🥳
 
 ## Conclusion
 
-In this guide, we learnt how to use the bases extensions to create a MAYC clone. If you built the Dapp pat yourself on the back and share it with us on the [web3sdkio discord](https://discord.gg/web3sdkio)! If you want to take a look at the code, check out the [GitHub Repository](https://github.com/web3sdkio-example/burn1155-mint721).
+In this guide, we learnt how to use the bases extensions to create a MAYC clone. If you built the Dapp pat yourself on the back and share it with us on the [thirdweb discord](https://discord.gg/thirdweb)! If you want to take a look at the code, check out the [GitHub Repository](https://github.com/thirdweb-example/burn1155-mint721).

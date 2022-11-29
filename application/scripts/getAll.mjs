@@ -1,11 +1,11 @@
-// Initialize the web3sdkio SDK
-import { Web3sdkioSDK } from "@web3sdkio/sdk";
+// Initialize the thirdweb SDK
+import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 import fs from "fs";
 import path from "path";
 
 (async () => {
-  // Create a READ-ONLY instance of the Web3sdkioSDK on the Mumbai network
-  const sdk = new Web3sdkioSDK("goerli"); // configure this to your network
+  // Create a READ-ONLY instance of the ThirdwebSDK on the Mumbai network
+  const sdk = new ThirdwebSDK("goerli"); // configure this to your network
   const contract = await sdk.getContract(
     "0x3714e40A15Deffb8E43A58b018bD81C2c6AC2445"
   );
