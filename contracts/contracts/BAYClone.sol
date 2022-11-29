@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC721Drop.sol";
+import "@web3sdkio/contracts/base/ERC721Drop.sol";
 
 contract BAYClone is ERC721Drop {
     constructor(

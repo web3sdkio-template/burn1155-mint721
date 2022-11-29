@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC1155Base.sol";
+import "@web3sdkio/contracts/base/ERC1155Base.sol";
 
 contract SerumClone is ERC1155Base {
     constructor(

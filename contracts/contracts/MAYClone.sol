@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC721LazyMint.sol";
-import "@thirdweb-dev/contracts/base/ERC1155Base.sol";
-import "@thirdweb-dev/contracts/base/ERC721Drop.sol";
+import "@web3sdkio/contracts/base/ERC721LazyMint.sol";
+import "@web3sdkio/contracts/base/ERC1155Base.sol";
+import "@web3sdkio/contracts/base/ERC721Drop.sol";
 
 contract MAYClone is ERC721LazyMint {
     // Store constant values for the 2 NFT Collections:
