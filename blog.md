@@ -2,8 +2,8 @@ In this guide, we'll show you how to create a clone of the MAYC collection drop 
 
 Before we get started, below are some helpful resources where you can learn more about the tools we will use in this guide.
 
-- [View project source code](https://github.com/web3sdkio-example/burn1155-mint721)
-- [Deploy](https://portal.web3sdk.io/deploy)
+- [View project source code](https://github.com/web3sdkio-template/burn1155-mint721)
+- [Deploy](https://docs.web3sdk.io/deploy)
 
 Let's get started!
 
@@ -34,7 +34,7 @@ Now you have a hardhat project ready to go!
 
 ### Setting up the frontend
 
-I am going to use the [Next.js Typescript starter template](https://github.com/web3sdkio-example/next-typescript-starter) for this guide.
+I am going to use the [Next.js Typescript starter template](https://github.com/web3sdkio-template/next-typescript-starter) for this guide.
 
 If you are following along with the guide, you can create a project with the template using the [web3sdkio CLI](https://github.com/web3sdkio/web3/tree/main/packages/cli):
 
@@ -46,7 +46,7 @@ If you already have a Next.js app you can simply follow these steps to get start
 
 - Install `@web3sdkio/react` and `@web3sdkio/sdk` and `ethers`.
 
-- Add MetaMask authentication to the site. You can follow this [guide](https://portal.web3sdk.io/guides/add-connectwallet-to-your-website) to add metamask auth.
+- Add MetaMask authentication to the site. You can follow this [guide](https://docs.web3sdk.io/guides/add-connectwallet-to-your-website) to add metamask auth.
 
 ## Creating the Smart Contracts
 
@@ -168,7 +168,7 @@ Here, we are extending the `ERC721LazyMint` contract. We are also taking in the 
 
 The verifyClaim function checks if the user owns enough BAYC and Serum NFTs. The transferTokensOnClaim function burns the Serum NFTs from the user and then calls the inherited transferTokensOnClaim function.
 
-Now that we have written our smart contracts, we will go ahead and deploy our contract using [deploy](https://portal.web3sdk.io/deploy).
+Now that we have written our smart contracts, we will go ahead and deploy our contract using [deploy](https://docs.web3sdk.io/deploy).
 
 ### Deploying the contracts
 
@@ -208,7 +208,7 @@ Now, go to the NFTs tab. Let's batch upload some NFTs for the users to mint. For
 
 Click on batch upload and upload the images and the CSV/JSON file.
 
-Once they are uploaded you will be able to see the NFTs! To learn more about batch upload check out [this guide](https://portal.web3sdk.io/guides/how-to-batch-upload).
+Once they are uploaded you will be able to see the NFTs! To learn more about batch upload check out [this guide](https://docs.web3sdk.io/guides/how-to-batch-upload).
 
 Now, we need to claim some NFTs to test out the process. Go to the explorer tab and click on the claim option. Now, fill out the data I am using the following values:
 
@@ -355,4 +355,4 @@ Now, if we test out our app everything works! 🥳
 
 ## Conclusion
 
-In this guide, we learnt how to use the bases extensions to create a MAYC clone. If you built the Dapp pat yourself on the back and share it with us on the [web3sdkio discord](https://discord.gg/web3sdkio)! If you want to take a look at the code, check out the [GitHub Repository](https://github.com/web3sdkio-example/burn1155-mint721).
+In this guide, we learnt how to use the bases extensions to create a MAYC clone. If you built the Dapp pat yourself on the back and share it with us on the [web3sdkio discord](https://discord.gg/n33UhsfUKB)! If you want to take a look at the code, check out the [GitHub Repository](https://github.com/web3sdkio-template/burn1155-mint721).
